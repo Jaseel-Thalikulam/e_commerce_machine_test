@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Button, Dropdown, Input } from "antd";
+import { Badge, Button, Dropdown, Input } from "antd";
 import "../../styles/header.css";
 import { Link, useLocation } from "react-router-dom";
 import { useCustomContext } from "../../context/CustomContext";
@@ -10,7 +10,7 @@ function HeaderComponent() {
   const [categories, setCategories] = useState([]);
 
   const { pathname } = useLocation();
-
+const {cart}=useCustomContext()
   const items = [
     {
       label: "Home",
@@ -86,18 +86,30 @@ function HeaderComponent() {
           <div className="line"></div>
         </div>
         <div className={`navigation--bar ${menuOpen ? "active" : ""}`}>
-          {items.map((item) => {
-            const isActive = pathname === item.path;
-            return (
+        {items.map((item) => {
+      const isActive = pathname === item.path;
+      return (
+        <div key={item.key}>
+          {item.key === 'cart' ? (
+            <Badge color="red" count={cart?.length>0?cart.length:0}>
               <Link
-                key={item.key}
                 to={item.path}
                 className={isActive ? "link--active" : ""}
               >
                 {item.label}
               </Link>
-            );
-          })}
+            </Badge>
+          ) : (
+            <Link
+              to={item.path}
+              className={isActive ? "link--active" : ""}
+            >
+              {item.label}
+            </Link>
+          )}
+        </div>
+      );
+    })}
         </div>
       </header>
     </>
