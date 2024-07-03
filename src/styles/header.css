@@ -1,0 +1,103 @@
+
+  
+  /* Header styles */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px 20px;
+    color: #1E1E1E;
+  }
+  
+  /* Logo styles */
+  .logo {
+    width: 50px;
+    height: 50px;
+    background: url('../assets/react.svg') no-repeat center center;
+    background-size: contain;
+  }
+  
+  /* Search bar styles */
+  .search--bar {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    margin: 0 10px;
+  }
+  
+  .search--bar input {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  /* Navigation bar styles */
+  .navigation--bar {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .navigation--bar a {
+    color: #1E1E1E;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .navigation--bar a:hover {
+    background-color: #eeee;
+
+  }
+  .link--active{
+    color: #ff2e2e !important;
+  }
+ 
+  @media (min-width: 600px) {
+    .navigation--bar {
+      display: flex;
+      flex-direction: row;
+      width: auto;
+    }
+  }
+  
+  /* Hamburger menu styles */
+  .hamburger {
+    display: block;
+    cursor: pointer;
+  }
+  
+  .hamburger .line {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px 0;
+  }
+  
+  @media (min-width: 600px) {
+    .hamburger {
+      display: none;
+    }
+  }
+  
+  .navigation--bar.active {
+    display: flex;
+  }
+
+  .filter--btn{
+    border-radius: 150px;
+  }
+
+.hamburger .line {
+  width: 25px;
+  height: 3px;
+  background-color: #1E1E1E;
+  margin: 5px 0;
+}
+
