@@ -1,4 +1,3 @@
-import React, { useEffect } from "react";
 import { useCustomContext } from "../context/CustomContext";
 import { Product } from "../types/productTypes";
 import "../styles/cart.css";
